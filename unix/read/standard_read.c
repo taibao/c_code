@@ -1,7 +1,6 @@
 #include "apue.h"
 int main(void)
-{
-    int c;
+{!
     //获取命令行输入
     while((c=getc(stdin)) != EOF)
         if(putc(c,stdout) == EOF)
@@ -9,6 +8,7 @@ int main(void)
 
     if (ferror(stdin))
         err_sys("input error");
-
+    //退出
     exit(0);
 }
+
