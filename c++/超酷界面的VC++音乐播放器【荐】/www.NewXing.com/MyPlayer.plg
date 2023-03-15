@@ -1,0 +1,85 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MyPlayer - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/MyPlayer.res" /d "NDEBUG" /d "_AFXDLL" "E:\春亮\新建文件夹\MyPlayer\MyPlayer.rc"" 
+Creating temporary file "C:\DOCUME~1\ooo\LOCALS~1\Temp\RSP8D.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/MyPlayer.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\春亮\新建文件夹\MyPlayer\DelListDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\FileAttributeDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\LyricDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\MyList.cpp"
+"E:\春亮\新建文件夹\MyPlayer\MyPlayer.cpp"
+"E:\春亮\新建文件夹\MyPlayer\MyPlayerDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\NewListDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\PlayListDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\RenameDlg.cpp"
+"E:\春亮\新建文件夹\MyPlayer\SkinButton.cpp"
+"E:\春亮\新建文件夹\MyPlayer\SlideButton.cpp"
+"E:\春亮\新建文件夹\MyPlayer\StarWarsCtrl.cpp"
+"E:\春亮\新建文件夹\MyPlayer\TransparentStatic.cpp"
+"E:\春亮\新建文件夹\MyPlayer\VolumeButton.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ooo\LOCALS~1\Temp\RSP8D.tmp" 
+Creating temporary file "C:\DOCUME~1\ooo\LOCALS~1\Temp\RSP8E.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/MyPlayer.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\春亮\新建文件夹\MyPlayer\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ooo\LOCALS~1\Temp\RSP8E.tmp" 
+Creating temporary file "C:\DOCUME~1\ooo\LOCALS~1\Temp\RSP8F.tmp" with contents
+[
+version.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/MyPlayer.pdb" /machine:I386 /out:"Release/MyPlayer.exe" 
+".\Release\DelListDlg.obj"
+".\Release\FileAttributeDlg.obj"
+".\Release\LyricDlg.obj"
+".\Release\MyList.obj"
+".\Release\MyPlayer.obj"
+".\Release\MyPlayerDlg.obj"
+".\Release\NewListDlg.obj"
+".\Release\PlayListDlg.obj"
+".\Release\RenameDlg.obj"
+".\Release\SkinButton.obj"
+".\Release\SlideButton.obj"
+".\Release\StarWarsCtrl.obj"
+".\Release\StdAfx.obj"
+".\Release\TransparentStatic.obj"
+".\Release\VolumeButton.obj"
+".\Release\MyPlayer.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ooo\LOCALS~1\Temp\RSP8F.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DelListDlg.cpp
+FileAttributeDlg.cpp
+LyricDlg.cpp
+MyList.cpp
+MyPlayer.cpp
+MyPlayerDlg.cpp
+NewListDlg.cpp
+PlayListDlg.cpp
+RenameDlg.cpp
+SkinButton.cpp
+SlideButton.cpp
+StarWarsCtrl.cpp
+TransparentStatic.cpp
+VolumeButton.cpp
+Generating Code...
+Linking...
+LINK : warning LNK4089: all references to "VERSION.dll" discarded by /OPT:REF
+
+
+
+<h3>Results</h3>
+MyPlayer.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
