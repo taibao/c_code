@@ -17,7 +17,7 @@ struct queue{
 
 int
 queue_init(struct queue *qp){
-    ini err;
+    int err;
     qp->q_head = NULL;
     qp->q_tail = NULL;
     err = pthread_rwlock_init(&qp->q_lock,NULL);
@@ -28,7 +28,7 @@ queue_init(struct queue *qp){
 
 void
 job_insert(struct queue *qp,struct job *jp){
-    pthread_rwlock_wrlock(*qp->q_lock); //锁定队列
+    pthread_rwlock_wrlock(&qp->q_lock); //锁定队列
     jp->j_next = qp->q_head;
     jp->j_prev = NULL;
     if(qp->q_head != NULL){
@@ -37,6 +37,7 @@ job_insert(struct queue *qp,struct job *jp){
         qp->q_tail = jp;
     }
     qp->q_head = jp;
+        printf("插入作业到队列成功\n");
     pthread_rwlock_unlock(&qp->q_lock);
 }
 
@@ -50,7 +51,7 @@ job_append(struct queue *qp,struct job *jp){
         qp->q_tail->j_next  = jp;
     else
         qp->q_head = jp;
-    qp->tail = jp;
+    qp->q_tail = jp;
     pthread_rwlock_unlock(&qp->q_lock);     
 }
 
@@ -59,9 +60,9 @@ void
 job_remove(struct queue *qp,struct job *jp){
     pthread_rwlock_wrlock(&qp->q_lock);
     if(jp == qp->q_head){
-        qp->q_head = jp->next;
+        qp->q_head = jp->j_next;
         if(qp->q_tail == jp){
-            qp->tail = NULL;
+            qp->q_tail = NULL;
         }else{
             jp->j_next->j_prev = jp->j_prev;
         }
@@ -83,12 +84,24 @@ job_find(struct queue *qp,pthread_t id){
     for(jp = qp->q_head;jp!=NULL;jp = jp->j_next)
         if(pthread_equal(jp->j_id,id))
             break;    
-    pthread_rwlock_unlock(*qp->q_lock);
+    pthread_rwlock_unlock(&qp->q_lock);
     return(jp);
 }
 
 
+int main(void){
+    struct queue my_queue; //实例化队列
+    queue_init(&my_queue);
+    for(int i=0;i<5;i++){
+    struct job new_job;
+    new_job.j_id = pthread_self(); //实例化节点
+    printf("输出当前线程id:%lu\n",new_job.j_id);
+    job_insert(&my_queue,&new_job);//节点插入队列
+    }
 
+
+
+}
 
 
 
